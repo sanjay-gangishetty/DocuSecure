@@ -1,0 +1,23 @@
+<%- include("header.ejs") %>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-6 m-auto">
+        <h1 class="display-4 my-4">DocuSecure</h1>
+        <p>One stop solution to save your Documents.</p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="custom-file mb-3 form-group">
+            <h1>Upload Files</h1><br>
+            <hr><br>
+            <input type="file" name="files" id="file" class="form-control-file" style="margin-bottom: 12px"
+              required><br>
+          </div>
+          <input type="submit" value="Upload" class="btn btn-primary btn-block">
+          <a class="btn btn-info btn-block" href="/home" role="button">Back</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <%- include("footer.ejs") %>
+    </body>

@@ -1,0 +1,42 @@
+<%- include("header.ejs") %>
+  <style>
+    h1 {
+      margin-bottom: 2%;
+    }
+
+    img {
+      height: 100px;
+      width: 100px;
+    }
+
+    #signup {
+      margin: 12% 30%;
+      text-align: center;
+    }
+
+    .signup-items {
+      margin: 1%;
+    }
+  </style>
+  <div id="signup">
+    <img
+      src="https://png.pngtree.com/png-vector/20220621/ourmid/pngtree-secure-file-folder-protection-safe-png-image_5247546.png"
+      alt="">
+    <h1>DocuSecure</h1>
+    <p>One stop solution to save your Documents.</p>
+    <h3>Register</h3>
+    <form action="/register" method="post">
+      <input type="text" class="form-control signup-items" placeholder="username" name="username" required
+        autocomplete="off" />
+      <input type="email" class="form-control signup-items" placeholder="youremail@email.com" name="userid" required
+        autocomplete="off" />
+
+      <input type="password" class="form-control signup-items" id="exampleInputPassword1" name="password"
+        placeholder="password" required />
+
+      <input type="password" class="form-control signup-items" id="exampleInputPassword1" name="confirmPassword"
+        placeholder="confirm password" required />
+
+      <button type="submit" class="btn btn-primary form-control signup-items">Register</button>
+    </form>
+  </div>

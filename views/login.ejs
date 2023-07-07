@@ -1,0 +1,37 @@
+<%- include("header.ejs") %>
+  <style>
+    h1 {
+      margin-bottom: 2%;
+    }
+
+    img {
+      height: 100px;
+      width: 100px;
+    }
+
+    #login {
+      margin: 13% 30%;
+      text-align: center;
+    }
+
+    .login-items {
+      margin: 1%;
+    }
+  </style>
+  <div id="login">
+    <img
+      src="https://png.pngtree.com/png-vector/20220621/ourmid/pngtree-secure-file-folder-protection-safe-png-image_5247546.png"
+      alt="">
+    <h1>DocuSecure</h1>
+    <p>One stop solution to save your Documents.</p>
+    <h3>Login</h3>
+    <form action="/login" method="post">
+      <input type="text" class="form-control login-items" placeholder="username" name="username" required
+        autocomplete="off" />
+
+      <input type="password" class="form-control login-items" id="exampleInputPassword1" name="password"
+        placeholder="password" required />
+
+      <button type="submit" class="btn btn-primary form-control login-items">Login</button>
+    </form>
+  </div>
