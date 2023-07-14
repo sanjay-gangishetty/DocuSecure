@@ -1,7 +1,7 @@
 <%- include("header.ejs") %>
     <style>
-        Body {
-            padding: 12px;
+        body {
+            background-color: #F2F0EC;
         }
 
         img {
@@ -19,38 +19,31 @@
         }
     </style>
 
-    
-     <div class="container text-center">
-<div class="row ">
-<div class="col-md-6 m-auto">
-    <h1 class="display-4 my-4">DocuSecure</h1>
-    <p>One stop solution to save your Documents.</p>
-    <h1>Download Files</h1>
-    <a class="btn btn-primary btn-block" href="/home" role="button">Home</a>
-    <hr>
-            <form action="/download" method="post">
-                 <!-- CODE LOGIC FOR DISPLAYING FILES  -->
-                <% files.forEach((file)=>{ %> 
-                    <li style="text-align: left;">
-                        <%= file.Key %> 
-                    </li><br>
-                    <% }) %>
-                    <input
-                    type="text"
-                    placeholder="Enter the filename you want to download"
-                    name="filename"
-                    required
-                    autocomplete="off"
-                    class="form-control signup-items"
-                  /> 
-                  <br>
-                  <button type="submit" class="btn btn-danger form-control signup-items">Download</button>
-            </form>
-    
-</div>
 
-</div>
-</div> 
+    <div class="container text-center">
+        <div class="row ">
+            <div class="col-md-6 m-auto">
+                <h1 class="display-4 my-4">Download Files</h1>
+                <p>One stop solution to save your Documents.</p>
+                <hr><br>
+                <form action="/download" method="post">
+                    <!-- CODE LOGIC FOR DISPLAYING FILES  -->
+                    <% files.forEach((file)=>{ %>
+                        <li style="text-align: left;">
+                            <%= file.Key %>
+                        </li><br>
+                        <% }) %>
+                            <input type="text" placeholder="Enter the full filename you want to download"
+                                name="filename" required autocomplete="off" class="form-control signup-items" />
+                            <br>
+                            <button type="submit" class="btn btn-primary form-control signup-items"><i
+                                    class="fa-solid fa-cloud-arrow-down fa-xl"></i> Download</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
 
     <%- include("footer.ejs") %>
-</body>
+        </body>

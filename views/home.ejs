@@ -1,18 +1,92 @@
 <%- include("header.ejs") %>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      background-color: #F2F0EC;
+      transition: 0.3s all ease;
+    }
 
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-md-6 m-auto">
-        <h1 class="display-4 my-4">DocuSecure</h1>
-        <p>One stop solution to save your Documents.</p>
-        <a class="btn btn-danger btn-block" href="/logout" role="button">Logout</a><br>
-        <hr><br>
-        <a class="btn btn-primary btn-block" href="/upload" role="button">Upload</a><br><br>
-        <a class="btn btn-primary btn-block" href="/files" role="button">View Files</a><br><br>
-        <a class="btn btn-primary btn-block" href="/download" role="button">Download Files</a><br><br>
+    .card-sec {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-top: 5%;
+      justify-content: center;
+    }
+
+    .features {
+      width: 23%;
+      background-color: #fff;
+      margin: 10px;
+      padding: 40px 20px;
+      border-radius: 8px;
+    }
+
+    .features:hover {
+      background-color: #F6F6F8;
+      color: #E5312D;
+      cursor: pointer;
+    }
+
+    .note-parent {
+      display: block;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      margin: 30px;
+      border-radius: 8px;
+    }
+  </style>
+
+  <div class="card-sec">
+    <div class="features" onclick="location.href='/upload'">
+      <div class="cards">
+        <i class="fa-solid fa-cloud-arrow-up fa-xl"></i>
+      </div>
+      <br>
+      <h4>Upload Files</h4>
+      <div class="cards">
+        <p>Don't worry we use encryption to ensure safety of your files.</p>
       </div>
     </div>
+    <div class="features" onclick="location.href='/files'">
+      <div class="cards">
+        <i class="fa-solid fa-file fa-xl"></i>
+      </div>
+      <br>
+      <h4>View Files</h4>
+      <div class="cards">
+        <p>View uploaded files from cloud.</p>
+      </div>
+    </div>
+    <div class="features" onclick="location.href='/files'">
+      <div class="cards">
+        <i class="fa-solid fa-trash fa-xl"></i>
+      </div>
+      <br>
+      <h4>Delete Files</h4>
+      <div class="cards">
+        <p>Delete uploaded files from cloud.</p>
+      </div>
+    </div>
+    <div class="features" onclick="location.href='/download'">
+      <div class="cards">
+        <i class="fa-solid fa-cloud-arrow-down fa-xl"></i>
+      </div>
+      <br>
+      <h4>Download Files</h4>
+      <div class="cards">
+        <p>Download uploaded files from cloud.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-parent">
+    <h2>Note - </h2>
+    <p>We use secure encryption methods to save you documents and Docusecure will also not be able to view the files
+      uploaded by you.
+      So, you can save the files without any fear.
+    </p>
   </div>
 
   <%- include("footer.ejs") %>
