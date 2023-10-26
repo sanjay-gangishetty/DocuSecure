@@ -10,6 +10,7 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const { authenticate } = require("passport");
+const PORT = process.env.PORT || 3000;
 
 const BucketName = process.env.BUCKET_NAME;
 var folder = " ";
@@ -258,8 +259,6 @@ app.post("/download", (req, res) => {
   }
 })
 
-const port = process.env.PORT || 3000;
-
-app.listen(port, function () {
-  console.log("Server has started Successfully.");
+app.listen(PORT, function () {
+  console.log(`Server has started Successfully on port ${PORT}.`);
 });
