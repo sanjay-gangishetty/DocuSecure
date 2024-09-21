@@ -1,24 +1,27 @@
 require("dotenv").config();
 const express = require("express");
+const path = require('path');
 const app = express();
 const multer = require("multer");
 const AWS = require("aws-sdk");
-const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
-const { authenticate } = require("passport");
 const PORT = process.env.PORT || 3000;
 
 const BucketName = process.env.BUCKET_NAME;
 var folder = " ";
 
-//MIDDLEWARE
+// MIDDLEWARE
 app.use(bodyParser.json());
-app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Set views directory to the correct path
+app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
+
 mongoose.set('strictQuery', true);
 
 AWS.config.update({
@@ -27,8 +30,8 @@ AWS.config.update({
   region: process.env.REGION
 })
 
-const storage = multer.memoryStorage()
-const upload = multer({ storage })
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 app.use(
   session({
@@ -58,6 +61,7 @@ passport.use(Idandpass.createStrategy());
 passport.serializeUser(Idandpass.serializeUser());
 passport.deserializeUser(Idandpass.deserializeUser());
 
+// ROUTES
 app.get("/", function (req, res) {
   res.render("main.ejs");
 });

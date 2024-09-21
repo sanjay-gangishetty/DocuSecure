@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  docu-secure:
+    build: .
+    image: docu-secure
+    container_name: docu-secure
+    ports:
+      - "8000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: always
+    command: "node app.js"
